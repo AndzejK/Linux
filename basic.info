@@ -1,0 +1,2 @@
+#FOR loop Syntex
+for x in *; do echo $i; done

@@ -1,0 +1,6 @@
+When u write ran CAT in the terminal (shell window) the stdout is connected to 
+to the terminal, where I can see the output.
+---
+#stdin - standard input
+#stdout - standard output
+---

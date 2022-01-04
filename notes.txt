@@ -18,3 +18,7 @@ e.x. rock@rock:~/looping$ echo ebook?.epub
 
 ----
 #grep - it's intermediate command and it prints the lines from a file or input stream that match an expression
+    for instance, if I want to check every file in /etc that contains the word "root" I can use this command:
+    rock@rock:~$ grep root /etc/*
+
+    test

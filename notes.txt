@@ -4,3 +4,15 @@ to the terminal, where I can see the output.
 #stdin - standard input
 #stdout - standard output
 ---
+
+#home directory - the directory where I started when I 1st logged in.
+!Recursive delete - to repeatedly delete everything inside <dir>
+
+<b>Globbing</b> - The <u>shell</u> can match simple pattern to FILE and DIRECTOTY names.
+* - the glob character, which tells the shell to match ANY NUMBER of arbitrary characters.
+e.x. rock@rock:~$ echo Do* 
+    >> Documents Downloads
+? - the glob character too, instructs the shell to match exactly ONE arbitrary character
+e.x. rock@rock:~/looping$ echo ebook?.epub
+    >> ebook1.epub ebook2.epub ebook3.epub ebook4.epub ebook5.epub
+

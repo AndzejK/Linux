@@ -3,6 +3,7 @@ to the terminal, where I can see the output.
 ---
 #stdin - standard input
 #stdout - standard output
+#stderr - standard error
 ---
 
 #home directory - the directory where I started when I 1st logged in.
@@ -20,5 +21,14 @@ e.x. rock@rock:~/looping$ echo ebook?.epub
 #grep - it's intermediate command and it prints the lines from a file or input stream that match an expression
     for instance, if I want to check every file in /etc that contains the word "root" I can use this command:
     rock@rock:~$ grep root /etc/*
+----
+standard error - it's an additional output stream for diagnostics and debugging;
+    I can redirect the standard error if I like. For example, to send standard output to FILE.txt and standard error
+    to ERROR.txt , use the syntex
+                2>
+        rock@rock:~/looping$ ls ebook1.epub >OUTCOME.txt  2>ERROR.txt // here I'm going to have two files
+        rock@rock:~/looping$ ls ebook1.epub  2>ERROR.txt // if no error result would be displayed in stdout (Terminal)
+    The number 2 specifies the stream  ID that the shell modifies. Stream ID 1 is stdout (the default), and 2 is standard error.
 
-    test
+    <  - standard input Redirection;
+    

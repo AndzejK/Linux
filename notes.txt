@@ -15,3 +15,6 @@ e.x. rock@rock:~$ echo Do*
 ? - the glob character too, instructs the shell to match exactly ONE arbitrary character
 e.x. rock@rock:~/looping$ echo ebook?.epub
     >> ebook1.epub ebook2.epub ebook3.epub ebook4.epub ebook5.epub
+
+----
+#grep - it's intermediate command and it prints the lines from a file or input stream that match an expression

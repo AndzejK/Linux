@@ -1,0 +1,1 @@
+dd if=dd_test.txt of=dd_test.someBlocks.txt // copy a whole file.

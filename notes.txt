@@ -51,4 +51,41 @@ flag. Having that info I can extract a specific file or directory.
 
 Last thing regarding TAR, when I unpack files it's good to keep a "p" option in order to preserve permissions. Because of it I'm able to override UMASK and get exact permissions specefied 
 in the archive.
+
+I have to use two steps to compress a file/dir and later on archive it:
+    gunzip file.tar.gz
+    tar xvt file.tar
+or I can use on command TAR w\ a flag "z" to automatically invoke gzip on the archive
+    tar ztvf file.tar.gz // check the content, coz of the "t" flag 
             ## Archiving and Compressing Files ##
+
+## Linux Directory Hierarchy Essentials ##
+
+FHS - Filesystem Hierarchy Standard 
+
+/etc - this core system cofiguration directory. Contains the user passwords, boot, device, networking and other setup files;
+/proc - provides system stats, info about currently runnning processes as well as some kernel parameters.
+/usr - Although is pronounced "user" but actually it does not contain user files. Instead, it contains a large dir Hierarchy, including 
+       the bulk of the Linux system.
+/var - all recorded info that can change over the course of time. Sys logging, user tracking....
+/opt - other root subdirectory, contais third-party software.
+
+## Linux Directory Hierarchy Essentials ##
+
+/dev - device lists = device nodes; if this character "b"-block,"c"-character,"s"-socket, "p"-pipe it's "device"/file.
+
+#Block device "b" - programs access data from a block device in fixed chunks. E.X "sda1"-disc partition SATA "/dev/sda" - is disc device a type of block device;
+#Character device "c" - works with data stream it means I can only read chracters from or write characters to character devices.
+                    Character device doesn't have a size. E.X. printers directly attached to your PC are represented by character devices.
+#Pipe device - I/O stream at the other end.
+#Socket device - are special-purpose interfaces that are frequently used for interprocess communication more info: https://www.youtube.com/watch?v=hsDxcJhCRLI&ab_channel=SecureRandom
+
+dd program - useful when working w\ block and character devices. Wipe out a disck, back a disc, can create bootable USB drive; 
+I think I can learn more about dd;
+      if - input file;
+      of - output file;
+      bs - block size;
+
+    rock@rock:~/linuxpocketguide$ dd if=dd_test.txt of=dd_test.someBlocks.txt bs=1 skip=19 count=49 
+        here I copy a part of file, dd_test.txt to dd_test.someBlocks.txt  where I say "bs=1" block size 1 means one bit/one character in ASCII.
+        "skip=19" - skip first bloks, in this case 19 bits; "count=49" - copy 49 blocks, 49 bits and that is it.

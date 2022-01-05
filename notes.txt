@@ -89,3 +89,17 @@ I think I can learn more about dd;
     rock@rock:~/linuxpocketguide$ dd if=dd_test.txt of=dd_test.someBlocks.txt bs=1 skip=19 count=49 
         here I copy a part of file, dd_test.txt to dd_test.someBlocks.txt  where I say "bs=1" block size 1 means one bit/one character in ASCII.
         "skip=19" - skip first bloks, in this case 19 bits; "count=49" - copy 49 blocks, 49 bits and that is it.
+
+            ## Hard Discs /dev/sd* ##
+Linux systems respond to Hard Disk with prefix "sd" but the kernel makes separate devices files, such sda or sdb for the partitions on a disc.
+"sd" stands or SCSI Disc, where SCSI Small Computer Syetem Interface - was originally developed as hardware and protocl standart for communication between devices such as disk and other peripherals.
+lsscsi - to list the SCSI devices on linux it works but on Mac doesn't.
+
+rock@rock:~/linuxpocketguide$ lsscsi
+[0:0:0:0]    cd/dvd  QEMU     QEMU CD-ROM      2.5+  /dev/sr0 //oprical storage and in this case just read info if I'm looking for write I should find /dev/sg0
+[N:0:0:1]    disk    QEMU NVMe Ctrl__1                          /dev/nvme0n1 //nvme* Non-Volatile Memory Devices to talk to smome Solid-State Storage/disk (SSD)
+
+## Terminals /dev/tty*, /dev/pts/* ##
+Terminals are devices for moving characters between a user process and I/O device, usually for text output to a terminal screen.
+/dev/tty1 - the first virtual console
+/dev/pts/0 - the 1st pseudoterminal device, where /dev/pts dir itself is a dedicated filesystem.

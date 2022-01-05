@@ -1,5 +1,8 @@
 When u write ran CAT in the terminal (shell window) the stdout is connected to 
 to the terminal, where I can see the output.
+
+process is just a running programm.
+
 ---
 #stdin - standard input
 #stdout - standard output
@@ -32,3 +35,20 @@ standard error - it's an additional output stream for diagnostics and debugging;
 
     <  - standard input Redirection;
     
+!I can only access a file in a dir if the dir is executable!
+
+            ## Archiving and Compressing Files ##
+gzip - basically takes a file and makes it into a file.gz. The same file was "transformed"/compressed into gz. In order to unzip use command gunzip
+tar cvf - "c" stands for Create, "v" - activates verbose diagnostic output; "f" - flag/file option, when we want to create a new archive and add the specific files, for instance
+    rock@rock:~/looping$ tar cvf backup.tar *.bak  //create a new archive "backup.tar" and chuck all files which ends up with .bak. At that point all files
+                                                  // with extention .bak haven't modified or touched
+to unarchive/untar/unpack this file use this command:
+    rock@rock:~/looping$ tar xvf backup.tar     // instead of "c" - create, "x" - extract(unpack) an archive.           
+
+Other good thing is before unpacking(extracting) .tar file to check the content of it, or otherwise it's called "table-of-contents" it means using "t" flag instead of the "x"
+flag. Having that info I can extract a specific file or directory. 
+    rock@rock:~/looping$ tar tvf backup.tar // provides me content of the that archive;
+
+Last thing regarding TAR, when I unpack files it's good to keep a "p" option in order to preserve permissions. Because of it I'm able to override UMASK and get exact permissions specefied 
+in the archive.
+            ## Archiving and Compressing Files ##

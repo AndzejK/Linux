@@ -103,3 +103,7 @@ rock@rock:~/linuxpocketguide$ lsscsi
 Terminals are devices for moving characters between a user process and I/O device, usually for text output to a terminal screen.
 /dev/tty1 - the first virtual console
 /dev/pts/0 - the 1st pseudoterminal device, where /dev/pts dir itself is a dedicated filesystem.
+
+                ## DISK and FILESYSTEMS ##
+The linux Logical Volume Manager (LVM).
+The next layer up from disc partition is FileSystem - the DB of files and dir that I'm accustomend to interacting with in user space.

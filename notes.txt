@@ -96,7 +96,7 @@ Linux systems respond to Hard Disk with prefix "sd" but the kernel makes separat
 lsscsi - to list the SCSI devices on linux it works but on Mac doesn't.
 
 rock@rock:~/linuxpocketguide$ lsscsi
-[0:0:0:0]    cd/dvd  QEMU     QEMU CD-ROM      2.5+  /dev/sr0 //oprical storage and in this case just read info if I'm looking for write I should find /dev/sg0
+[0:0:0:0]    cd/dvd  QEMU     QEMU CD-ROM      2.5+  /dev/sr0 //optical storage and in this case just read info if I'm looking for write I should find /dev/sg0
 [N:0:0:1]    disk    QEMU NVMe Ctrl__1                          /dev/nvme0n1 //nvme* Non-Volatile Memory Devices to talk to smome Solid-State Storage/disk (SSD)
 
 ## Terminals /dev/tty*, /dev/pts/* ##
@@ -135,3 +135,11 @@ Number  Start   End     Size    File system  Name  Flags
  1      1049kB  538MB   537MB   fat32              boot, esp
  2      538MB   1612MB  1074MB  ext4
  3      1612MB  21.5GB  19.9GB
+
+To find out device(disk/USB) location I can use: "lsblk"
+rock@rock:~$ lsblk
+
+The process of attaching a filesystem to a running system is called "mounting", on UNIX.
+mount point - is normal dir; therefore, mount a device on a mount point and it can be anywhere on the system. 
+    For instance: /music would be a mount point for a filesystem conatining music;
+    rock@rock:~$ mount // to look up the current filesystem status of the system

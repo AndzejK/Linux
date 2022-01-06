@@ -107,3 +107,31 @@ Terminals are devices for moving characters between a user process and I/O devic
                 ## DISK and FILESYSTEMS ##
 The linux Logical Volume Manager (LVM).
 The next layer up from disc partition is FileSystem - the DB of files and dir that I'm accustomend to interacting with in user space.
+
+Tools for partitioning discs:
+    *parted;
+    *gparted;
+    *fdisk
+rock@rock:~/linuxpocketguide$ sudo parted -l
+
+[sudo] password for rock: 
+Model: Linux device-mapper (linear) (dm) //system uses LVM, coz Ubuntu is installed on VM UTM and apparantly, the partitions have been somehoe seprated from the partition tbl.
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 19.9GB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags: 
+
+Number  Start  End     Size    File system  Flags
+ 1      0.00B  19.9GB  19.9GB  ext4
+
+
+Model: QEMU NVMe Ctrl (nvme)
+Disk /dev/nvme0n1: 21.5GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt //Globally Unique Identifier Partition Table
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name  Flags
+ 1      1049kB  538MB   537MB   fat32              boot, esp
+ 2      538MB   1612MB  1074MB  ext4
+ 3      1612MB  21.5GB  19.9GB

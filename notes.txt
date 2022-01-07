@@ -143,3 +143,8 @@ The process of attaching a filesystem to a running system is called "mounting", 
 mount point - is normal dir; therefore, mount a device on a mount point and it can be anywhere on the system. 
     For instance: /music would be a mount point for a filesystem conatining music;
     rock@rock:~$ mount // to look up the current filesystem status of the system
+
+    To determine if a system uses a BIOS UEFI, run "efibootmnr"
+    drivers?:
+    BIOS - Basic Input/Ouput System;
+    UEFI - Unified Extensible Firmware Interface; 

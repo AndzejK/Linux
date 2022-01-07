@@ -1,3 +1,5 @@
 dd if=dd_test.txt of=dd_test.someBlocks.txt // copy a whole file.
 
 journalctl -k // reading "Initial kernel Read" logged 
+
+du -sh * //disc usage "s" here show total, basically where you're at dir it'll display the size of usinf files/dirß

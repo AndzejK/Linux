@@ -12,3 +12,7 @@ find . -name "myfile*" // start looking for a file from the current dir "." by n
                                     through "N" DAYS ago, [-mtime n]
 find dir -mmin -50 // find files from "dir" directory which were modified in the last 50 min;
 
+case #1 - When I want to find some certain files and move them to a dir.
+        find . -type f -name "*.pdf" | xargs -I [] mv [] /dir // -I [] mv [] - here we have -I option where  we tell that we gonna use the placeholder
+        //since "mv" command requires SC and DST, we place all outcome to placeholde [] and later provider one by one result to "mv" command
+        //looks that we give source "*.pfd" and DST is always the same/constent and in our case "/dir"

@@ -16,3 +16,6 @@ case #1 - When I want to find some certain files and move them to a dir.
         find . -type f -name "*.pdf" | xargs -I [] mv [] /dir // -I [] mv [] - here we have -I option where  we tell that we gonna use the placeholder
         //since "mv" command requires SC and DST, we place all outcome to placeholde [] and later provider one by one result to "mv" command
         //looks that we give source "*.pfd" and DST is always the same/constent and in our case "/dir"
+
+        my recent usage of find it move it command:
+rock@Andzejs-Air Downloads % ls -t | head -1 | xargs -I {} mv {} /Volumes/KOBOeReader/books

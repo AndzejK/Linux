@@ -148,3 +148,12 @@ mount point - is normal dir; therefore, mount a device on a mount point and it c
     drivers?:
     BIOS - Basic Input/Ouput System;
     UEFI - Unified Extensible Firmware Interface; 
+
+##Threads - in Linux some processes divide into pieces called threads; However, all threads inside a single process share their system resources and some memory.
+        Unlike a process doesn't sharesystem resources, such as memory and I/O connections w' other processes.
+
+--On a side--
+I can connect to another termianl/shell from a current shell through ssh using private key 
+and in this case:
+    ssh -i {th path to private key} login@ip/hostname // -i flag indacets that an user is about to indicate the path to the private key.
+    

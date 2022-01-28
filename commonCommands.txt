@@ -19,3 +19,6 @@ case #1 - When I want to find some certain files and move them to a dir.
 
         my recent usage of find it move it command:
 rock@Andzejs-Air Downloads % ls -t | head -1 | xargs -I {} mv {} /Volumes/KOBOeReader/books
+
+let's say I want to get/print just some info from "ls" command
+rock@rock:~$ ls -l | awk '{print $9 "=" $5}' // where shell prints name of dir/file (9 position) separated by '=' sign and following with size of dir/file (5 position)
